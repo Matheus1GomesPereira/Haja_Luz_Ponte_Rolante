@@ -220,12 +220,23 @@ button {
 /*---------------------------- preloader area ----------------------------*/
 
 .loader_bg {
-     position: fixed;
-     z-index: 9999999;
-     background: #fff;
-     width: 100%;
-     height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 999999999; /* maior que tudo */
 }
+
+.loading .header {
+    display: none !important;
+}
+
+.loading {
+    overflow: hidden; /* impede rolagem enquanto carrega */
+}
+
 
 .loader {
      height: 100%;
@@ -244,7 +255,6 @@ button {
 
 
 /*-- header area --*/
-
 
 /*-- sidebar  navigation--*/
 
@@ -278,8 +288,20 @@ button {
      padding-right: 10px;
 }
 
+/* ---------------- HEADER COM TRANSIÇÃO ---------------- */
 
-/*-- marker-end sidebar  navigation--*/
+/* Cor inicial do menu */
+.header_section {
+  background-color: #343a40 !important;
+  transition: background-color 0.5s ease;
+}
+
+/* Cor quando rolar a página */
+.header_section.scrolled {
+  background-color: #000000 !important;
+}
+
+/* ---------------- RIGHT BUTTON ---------------- */
 
 .right_button {
      float: right;
@@ -297,18 +319,34 @@ button {
      font-weight: 500;
 }
 
+/* ---------------- HEADER ---------------- */
+
 .header {
      width: 100%;
      padding: 30px 30px;
-     background: #000000;
+
+     /* REMOVIDO: background fixo que travava a transição */
+     /* background: #000000; */
+
      border-bottom: #fff solid 5px;
+
+     position: fixed;
+     top: 0;
+     left: 0;
+     z-index: 9999;
 }
+
+/* Evita que o conteúdo fique escondido atrás do header */
+body {
+     padding-top: 120px;
+}
+
 
 
 /** banner section **/
 
 .banner_main {
-     background: url(../images/banner.jpg);
+     background: url(../images/banner.webp);
      padding: 127px 0px 0px 0px;
      background-size: 100% 100%;
      background-repeat: no-repeat;
@@ -320,7 +358,7 @@ button {
 }
 
 .text-bg h1 {
-     color: #fff;
+     color: #000000;
      font-size: 65px;
      line-height: 75px;
      padding-bottom: 50px;
@@ -329,7 +367,7 @@ button {
 }
 
 .text-bg p {
-     color: #fff;
+     color: #000000;
      line-height: 30px;
      font-size: 17px;
      margin-bottom: 50px;
@@ -438,7 +476,7 @@ button {
 
 .service {
      padding-top: 90px;
-     background: url(../images/service_bg.jpg);
+     background: url(../images/service_bg.webp);
      background-size: 100% 100%;
      background-repeat: no-repeat;
 }
@@ -597,7 +635,7 @@ button {
      width: 391px;
      height: 46px;
      top: -20px;
-     background: url(../images/pro_after.jpg);
+     background: url(../images/pro_after.webp);
      background-repeat: no-repeat;
      left: -8px;
      right: -8px;
@@ -609,7 +647,7 @@ button {
      width: 391px;
      height: 46px;
      bottom: 80px;
-     background: url(../images/pro_after.jpg);
+     background: url(../images/pro_after.webp);
      background-repeat: no-repeat;
      left: -8px;
      right: -8px;
@@ -707,6 +745,13 @@ button {
      background: #fff;
 }
 
+/* Faz o formulário e o mapa terem a mesma altura */
+.contact .row {
+     display: flex;
+     flex-wrap: wrap;
+     align-items: stretch; /* iguala a altura */
+}
+
 .contact .titlepage {
      text-align: left;
      padding-bottom: 60px;
@@ -724,9 +769,33 @@ button {
      padding-right: 0;
 }
 
+/* MAPA AJUSTADO PARA ALTURA IGUAL AO FORMULÁRIO */
+.map_section {
+  min-height: 732px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 #map {
+  flex: 1;
+  min-height: 732px;
+  height: 100%;
+}
+
+
+#map iframe {
+     width: 100%;
      height: 100%;
-     min-height: 732px;
+     border: none;
+}
+
+/* FORMULÁRIO AJUSTADO PARA ALTURA IGUAL */
+.contact .col-md-6 {
+     flex: 1;
+     min-width: 300px;
+     display: flex;
+     flex-direction: column;
 }
 
 .main_form {
@@ -788,6 +857,7 @@ button {
      color: #ffffff;
      opacity: 1;
 }
+
 
 
 /** end contact section **/
@@ -872,33 +942,6 @@ ul.location_icon li a {
      padding-right: 20px;
 }
 
-.news_form {
-     text-align: right;
-     margin-top: 15px;
-}
-
-.news_form .letter_form {
-     height: 56px;
-     width: 40%;
-     padding: 0 15px;
-     font-size: 17px;
-     border: inherit;
-     border-radius: 32px;
-}
-
-.news_form .sumbit {
-     padding: 8px 36px;
-     margin-left: -51px;
-     font-size: 18px;
-     background: #f9bf16;
-     color: #fff;
-     border: #fff solid 4px;
-     border-radius: 30px;
-}
-
-.news_form .sumbit:hover {
-     background-color: #0000ff;
-}
 
 .copyright {
      margin-top: 80px;
@@ -922,6 +965,21 @@ ul.location_icon li a {
 
 .copyright a:hover {
      color: #f9bf16;
+}
+
+.fa-whatsapp {
+  color: #25D366 !important; /* verde oficial do WhatsApp */
+}
+
+.fa-instagram {
+  background: radial-gradient(circle at 30% 107%, 
+      #fdf497 0%, 
+      #fdf497 5%, 
+      #fd5949 45%, 
+      #d6249f 60%, 
+      #285AEB 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 
@@ -979,3 +1037,316 @@ ul.location_icon li a {
      margin-bottom: 90px;
 }
 
+
+/* Esconde o header enquanto o loader estiver ativo */
+.loading .header {
+    display: none !important;
+}
+
+/*--------------------------------------------------------------------- File Name: responsive.css ---------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------- 991px x 768px ---------------------------------------------------------------------*/
+
+@media (min-width: 1200px) and (max-width: 1342px) {}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .project .project_box h3 {
+        font-size: 25px;
+    }
+    .before_top::before,
+    .before_bottom::before {
+        width: 334px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .logo {
+        margin-top: 4px;
+    }
+    .right_button {
+        padding-top: 6px;
+    }
+    .right_button .login_btn {
+        padding-right: 12px;
+    }
+    .navigation.navbar {
+        padding-top: 12px !important;
+    }
+    .navigation.navbar-dark .navbar-nav .nav-link {
+        padding: 0px 9px;
+        font-size: 16px;
+    }
+    .banner_main {
+        min-height: 655px;
+    }
+    .text-bg .read_more {
+        margin-right: 5px;
+        padding: 11px 0;
+        max-width: 186px;
+    }
+    #banner1 .carousel-control-prev,
+    #banner1 .carousel-control-next {
+        top: 117%;
+    }
+    .titlepage h2 {
+        font-size: 35px;
+    }
+    .project .project_box h3 {
+        font-size: 20px;
+    }
+    .before_top::before,
+    .before_bottom::before {
+        width: 255px;
+    }
+    .main_form {
+        margin-top: 47px;
+    }
+    ul.location_icon li {
+        padding: 9px 0px;
+        font-size: 15px;
+    }
+    ul.social_icon li a {
+        width: 41px;
+        font-size: 22px;
+        height: 41px;
+    }
+    .footer p {
+        padding-right: 21px;
+        font-size: 15px;
+    }
+    .neslatter {
+        font-size: 20px !important;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .logo {
+        width: 130px;
+        margin-top: 5px;
+    }
+    .banner_main {
+        min-height: 576px;
+    }
+    .text-bg h1 {
+        font-size: 48px;
+        line-height: 51px;
+    }
+    #banner1 .carousel-control-prev,
+    #banner1 .carousel-control-next {
+        top: 120%;
+    }
+    .titlepage h2 {
+        font-size: 26px;
+        line-height: 29px;
+    }
+    .before_top::before,
+    .before_bottom::before {
+        left: 0px;
+        background-position: center center;
+        text-align: center;
+        right: 0;
+        width: initial;
+    }
+    .margin_top1 {
+        margin-top: 0px;
+    }
+    .footer h3 {
+        padding-top: 20px;
+    }
+    .padding_right2 {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .map_section {
+        margin-top: 30px;
+    }
+    .news_form .letter_form {
+        width: 100%;
+    }
+    .news_form .sumbit {
+        float: left;
+        margin-top: 30px;
+        margin-left: 0px;
+    }
+    .neslatter {
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
+    .main_form {
+        padding-left: 0px;
+    }
+    .right_button {
+        display: none;
+    }
+    .navigation.navbar {
+        float: right;
+        display: inherit !important;
+        padding: 0;
+        width: 100%;
+        padding-top: 2px !important;
+    }
+    .navigation .navbar-collapse {
+        background: #0000ff;
+        padding: 20px;
+        margin-top: 89px;
+        position: absolute;
+        width: 100%;
+        z-index: 999;
+    }
+    .navigation.navbar-dark .navbar-nav .nav-link {
+        padding: 10px 0;
+        color: #fff;
+    }
+    .navigation.navbar-dark .navbar-nav .nav-link:focus,
+    .navigation.navbar-dark .navbar-nav .nav-link:hover {
+        color: #f9bf16;
+    }
+    .navigation.navbar-dark .navbar-nav .active>.nav-link,
+    .navigation.navbar-dark .navbar-nav .nav-link.active,
+    .navigation.navbar-dark .navbar-nav .nav-link.show,
+    .navigation.navbar-dark .navbar-nav .show>.nav-link {
+        color: #f9bf16;
+    }
+    .navigation.navbar-dark .navbar-toggler {
+        border: inherit;
+        float: right;
+        padding-top: 6px;
+    }
+    .navigation.navbar-dark .navbar-toggler-icon {
+        background: url(../images/menu_icon.webp);
+        background-repeat: no-repeat;
+        width: 64px;
+        height: 44px;
+    }
+}
+
+@media (max-width: 575px) {
+    .header {
+        padding: 25px 0px 25px 0px;
+    }
+    .logo {
+        border: inherit;
+        float: left;
+        margin-top: 0px !important;
+    }
+    .banner_main {
+        padding: 99px 0px 0px 0px;
+        min-height: 547px;
+    }
+    .text-bg h1 {
+        font-size: 41px;
+        padding-bottom: 20px;
+        line-height: 50px;
+    }
+    .text-bg .read_more {
+        margin-right: 7px;
+        padding: 6px 0;
+        max-width: 136px;
+    }
+    #banner1 .carousel-control-prev,
+    #banner1 .carousel-control-next {
+        top: 115%;
+    }
+    .titlepage h2 {
+        font-size: 25px;
+        line-height: 34px;
+    }
+    .service .titlepage p {
+        padding-left: 0px;
+    }
+    .service .service_box i img {
+        float: initial;
+        padding-right: 0px;
+    }
+    .service .service_text h3 {
+        padding-bottom: 15px;
+        margin-top: 10px;
+    }
+    .service .service_box {
+        margin-bottom: 30px;
+    }
+    .margin_top1 {
+        margin-top: 0px;
+    }
+    .project .project_box h3 {
+        font-size: 28px;
+    }
+    .before_top::before,
+    .before_bottom::before {
+        left: 4px;
+        width: 309px;
+    }
+    .footer h3 {
+        padding-top: 20px;
+        font-size: 22px;
+    }
+    .padding_right2 {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .map_section {
+        margin-top: 30px;
+    }
+    ul.location_icon li {
+        font-size: 16px;
+    }
+    .news_form .letter_form {
+        width: 100%;
+    }
+    .news_form .sumbit {
+        float: left;
+        margin-top: 30px;
+        margin-left: 0px;
+    }
+    .neslatter {
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
+    .main_form {
+        padding-left: 0px;
+    }
+    .right_button {
+        display: none;
+    }
+    .navigation.navbar {
+        float: right;
+        display: inherit !important;
+        padding: 0;
+        width: 100%;
+        margin-top: -68px;
+    }
+    .navigation .navbar-collapse {
+        background: #0000ff;
+        padding: 20px;
+        margin-top: 82px;
+        position: absolute;
+        width: 100%;
+        z-index: 999;
+    }
+    .navigation.navbar-dark .navbar-nav .nav-link {
+        padding: 10px 0;
+        color: #fff;
+    }
+    .navigation.navbar-dark .navbar-nav .nav-link:focus,
+    .navigation.navbar-dark .navbar-nav .nav-link:hover {
+        color: #f9bf16;
+    }
+    .navigation.navbar-dark .navbar-nav .active>.nav-link,
+    .navigation.navbar-dark .navbar-nav .nav-link.active,
+    .navigation.navbar-dark .navbar-nav .nav-link.show,
+    .navigation.navbar-dark .navbar-nav .show>.nav-link {
+        color: #f9bf16;
+    }
+    .navigation.navbar-dark .navbar-toggler {
+        float: right;
+        margin-right: 2px;
+        border: inherit;
+    }
+    .navigation.navbar-dark .navbar-toggler-icon {
+        background: url(../images/menu_icon.webp);
+        background-repeat: no-repeat;
+        width: 64px;
+        height: 44px;
+    }
+}

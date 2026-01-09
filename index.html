@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <!-- basic -->
+      <!-- Meta básicos -->
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <!-- mobile metas -->
+
+      <!-- Mobile metas (apenas 1 é necessário) -->
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-      <!-- site metas -->
-      <title>eoc</title>
+
+      <!-- SEO -->
+      <title>Haja Luz Ponte Rolante</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
-      <!-- bootstrap css -->
+
+      <!-- CSS principal -->
       <link rel="stylesheet" href="css/bootstrap.min.css">
-      <!-- style css -->
-      <link rel="stylesheet" href="css/style.css">
-      <!-- Responsive-->
-      <link rel="stylesheet" href="css/responsive.css">
-      <!-- fevicon -->
-      <link rel="icon" href="images/fevicon.png" type="image/gif" />
-      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/site.min.css">
+
+      <!-- Ícone -->
+      <link rel="icon" href="images/favicon.ico" type="image/gif">
+
+      <!-- Plugins -->
       <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
-      <!-- Tweaks for older IEs-->
-      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-      <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+
+      <!-- Font Awesome (versão com ícone do WhatsApp) -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+      <!-- Fancybox -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
+      
+      <!--EmailJS-->
+      <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
    </head>
+
    <!-- body -->
-   <body class="main-layout">
+   <body class="main-layout loading">
       <!-- loader  -->
       <div class="loader_bg">
          <div class="loader"><img src="images/loading.gif" alt="#" /></div>
@@ -39,13 +44,13 @@
       <!-- header -->
       <header>
          <!-- header inner -->
-         <div class="header">
+         <div class="header header_section">
             <div class="container-fluid">
                <div class="row">
                   <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
                      <div class="full">
                         <div class="logo">
-                           <a href="index.html"><img src="images/logo.png" alt="#" /></a>
+                           <a href="index.html"><img src="images/logo.webp" alt="#" /></a>
                         </div>
                      </div>
                   </div>
@@ -57,27 +62,24 @@
                         <div class="collapse navbar-collapse" id="navbarsExample04">
                            <ul class="navbar-nav mr-auto">
                               <li class="nav-item active">
-                                 <a class="nav-link" href="index.html">Home</a>
+                                 <a class="nav-link" href="#home">Inicio</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="about.html">About</a>
+                                 <a class="nav-link" href="#about">Sobre</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="project.html">Our Project</a>
+                                 <a class="nav-link" href="#project">Projetos</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="testimonial.html">Testimonial</a>
+                                 <a class="nav-link" href="#testimonial">Depoimentos</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="contact.html">Contact Us</a>
+                                 <a class="nav-link" href="#contact">Contate-nos</a>
                               </li>
                            </ul>
                         </div>
                      </nav>
-                     <div class="right_button">
-                        <a class="login_btn" href="Javascript:void(0)">Login</a>
-                        <a href="Javascript:void(0)"><i class="fa fa-search" aria-hidden="true"></i></a>
-                     </div>
+                    
                   </div>
                </div>
             </div>
@@ -87,6 +89,7 @@
       <!-- end header -->
       <!-- banner -->
       <section class="banner_main">
+         
          <div id="banner1" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                <li data-target="#banner1" data-slide-to="0" class="active"></li>
@@ -102,7 +105,7 @@
                               <div class="text-bg">
                                  <h1> <span class="yellow"> Electrical </span> <br>Contractor</h1>
                                  <p>It is a long established fact that a reader will be distracted by the readablecontent of a page when looking at its layout. The point of using Lorem </p>
-                                 <a class="read_more" href="#">Contact</a><a class="read_more" href="#">About Us</a>
+                                 <a class="read_more" href="#contact">Contate-nos</a>
                               </div>
                            </div>
                         </div>
@@ -117,7 +120,7 @@
                               <div class="text-bg">
                                  <h1> <span class="yellow"> Electrical </span> <br>Contractor</h1>
                                  <p>It is a long established fact that a reader will be distracted by the readablecontent of a page when looking at its layout. The point of using Lorem </p>
-                                 <a class="read_more" href="#">Contact</a><a class="read_more" href="#">About Us</a>
+                                 <a class="read_more" href="#contact">Contate-nos</a>
                               </div>
                            </div>
                         </div>
@@ -132,7 +135,7 @@
                               <div class="text-bg">
                                  <h1> <span class="yellow"> Electrical </span> <br>Contractor</h1>
                                  <p>It is a long established fact that a reader will be distracted by the readablecontent of a page when looking at its layout. The point of using Lorem </p>
-                                 <a class="read_more" href="#">Contact</a><a class="read_more" href="#">About Us</a>
+                                 <a class="read_more" href="#contact">Contate-nos</a>
                               </div>
                            </div>
                         </div>
@@ -155,56 +158,54 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="titlepage">
-                     <h2><img src="images/heading_icon.png" alt="#"/><span class="yellow">Providing a Range</span> <br> <span class="appp_l">Commercial & Residential Services </span></h2>
-                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
+                     <h2><img src="images/heading_icon.webp" alt="#"/><span class="yellow">Dispomos de uma </span> <br> <span class="appp_l">Variedades de serviços comerciais </span></h2>
+                     <p>Realizamos inspeções, diagnósticos e correções em toda a parte elétrica da ponte rolante, garantindo funcionamento seguro e preciso.</p>
                   </div>
                </div>
             </div>
             <div class="row">
                <div class="col-md-12">
                   <div class="service_box">
-                     <i><img src="images/service_icon1.png" alt="#"/></i>
+                     <i><img src="images/service_icon1.webp" alt="#"/></i>
                      <div class="service_text">
-                        <h3> Electrical Testing</h3>
-                        <p>It is a long established fact that a reader will be distracted by   the readable content of<br>
-                           a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it 
+                        <h3> Teste Elétrico</h3>
+                        <p>O teste elétrico em pontes rolantes é essencial para garantir o funcionamento seguro e eficiente dos componentes.<br>
+                           Ele verifica a integridade dos cabos, motores e painéis de controle, prevenindo falhas durante a operação. A análise inclui medições de resistência, continuidade e isolamento, assegurando que não haja riscos de curto-circuito ou sobrecarga.
                         </p>
                      </div>
                   </div>
                </div>
                <div class="col-md-12">
                   <div class="service_box">
-                     <i><img src="images/service_icon2.png" alt="#"/></i>
+                     <i><img src="images/service_icon2.webp" alt="#"/></i>
                      <div class="service_text">
-                        <h3>Cable Change</h3>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of <br>
-                           a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it 
+                        <h3> Substituição de cabos </h3>
+                        <p>A substituição de cabos em pontes rolantes é uma etapa crítica na manutenção preventiva. <br>
+                           Ela garante que os sistemas de elevação operem com segurança e precisão. O processo envolve inspeção visual, verificação de desgaste e troca por cabos compatíveis com a carga. Isso evita acidentes e prolonga a vida útil do equipamento.
                         </p>
                      </div>
                   </div>
                </div>
                <div class="col-md-12">
                   <div class="service_box">
-                     <i><img src="images/service_icon3.png" alt="#"/></i>
+                     <i><img src="images/service_icon3.webp" alt="#"/></i>
                      <div class="service_text">
-                        <h3>Emergy Survey</h3>
-                        <p>It is a long established fact that a reader will be distracted by the readable content ofa page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it </p>
+                        <h3> Estudo da Emergia </h3>
+                        <p>O estudo da emergia analisa toda a energia investida na produção de um sistema ou processo. Ele considera recursos naturais, insumos e esforços humanos, permitindo avaliar a eficiência real das operações. Essa abordagem identifica desperdícios, otimiza o uso de materiais e contribui para decisões mais sustentáveis.</p>
                      </div>
                   </div>
                </div>
                <div class="col-md-12">
                   <div class="service_box border_bottom1">
-                     <i><img src="images/service_icon4.png" alt="#"/></i>
+                     <i><img src="images/service_icon4.webp" alt="#"/></i>
                      <div class="service_text">
-                        <h3>  Security Alert </h3>
-                        <p>It is a long established fact that a reader will be distracted by the readable content ofa page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content he<br>
-                           re', making it 
-                        </p>
+                        <h3>  Alerta de segurança </h3>
+                        <p>O alerta de segurança é fundamental para prevenir riscos durante operações industriais. Ele orienta operadores sobre procedimentos corretos, identifica situações perigosas e reforça a importância do uso de equipamentos de proteção. Essa prática reduz acidentes, melhora a atenção da equipe e mantém o ambiente de trabalho mais seguro e controlado.</p>
                      </div>
                   </div>
                </div>
                <div class="col-md-12">
-                  <a class="read_more" href="#">Read More</a>
+                  <a class="read_more" href="#contact">Consulte mais Informações</a>
                </div>
             </div>
          </div>
@@ -216,13 +217,13 @@
             <div class="row">
                <div class="col-md-10 offset-md-1">
                   <div class="titlepage">
-                     <h2> <img src="images/heading_icon.png" alt="#">About <span class="yellow">Us</span></h2>
-                     <p>It is a long established fact that a reader will be distracted by the readable content ofa page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it </p>
+                     <h2> <img src="images/heading_icon.webp" alt="#">Sobre <span class="yellow">Nós</span></h2>
+                     <p>Somos uma empresa especializada na manutenção elétrica de pontes rolantes industriais, com atuação dedicada em sistemas de comando, potência e quadros elétricos. Nosso objetivo é garantir segurança operacional, continuidade produtiva e conformidade técnica em ambientes industriais exigentes.</p>
                   </div>
                </div>
                <div class="col-md-10 offset-md-1">
                   <div class="about_img">
-                     <figure><img src="images/about_img.png" alt="#"/></figure>
+                     <figure><img src="images/about_img.webp" alt="#"/></figure>
                   </div>
                </div>
             </div>
@@ -235,8 +236,8 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="titlepage">
-                     <h2><img src="images/heading_iconw.png" alt="#"/>Our Recent Projects</h2>
-                     <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content  
+                     <h2><img src="images/heading_iconw.webp" alt="#"/>Nossas iniciativas recentes</h2>
+                     <p>Nossas ações recentes fomentaram a inovação, reforçaram alianças estratégicas e impulsionaram soluções sustentáveis que geram impactos positivos em comunidades e mercados em crescimento.
                      </p>
                   </div>
                </div>
@@ -244,24 +245,24 @@
             <div class="row">
                <div class="col-md-4">
                   <div class="project_box before_top">
-                     <figure><img src="images/project_img1.jpg" alt="#"/></figure>
-                     <h3>Modern Fixture</h3>
+                     <figure><img src="images/project_img1.webp" alt="#"/></figure>
+                     <h3>Ponte Rolante</h3>
                   </div>
                </div>
                <div class="col-md-4">
                   <div class="project_box margin_top1 before_bottom">
-                     <figure class="marging_top4"><img  src="images/project_img2.jpg" alt="#"/></figure>
-                     <h3 >Vintage chandlier</h3>
+                     <figure class="marging_top4"><img  src="images/project_img2.webp" alt="#"/></figure>
+                     <h3 >Quadro de Comando</h3>
                   </div>
                </div>
                <div class="col-md-4">
                   <div class="project_box before_top">
-                     <figure><img src="images/project_img3.jpg" alt="#"/></figure>
-                     <h3>bulpilo</h3>
+                     <figure><img src="images/project_img3.webp" alt="#"/></figure>
+                     <h3>Ponte Rolante</h3>
                   </div>
                </div>
                <div class="col-md-12">
-                  <a class="read_more" href="#">See More</a>
+                  <a class="read_more" href="#contact">Ver Mais</a>
                </div>
             </div>
          </div>
@@ -273,7 +274,7 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="titlepage">
-                     <h2><img src="images/heading_icon.png" alt="#"/> Testimonial</h2>
+                     <h2><img src="images/heading_icon.webp" alt="#"/>Depoimentos</h2>
                   </div>
                </div>
             </div>
@@ -352,23 +353,23 @@
                         <div class="row">
                            <div class="col-md-12">
                               <div class="titlepage">
-                                 <h2>Contact Us</h2>
+                                 <h2>Contate-nos</h2>
                               </div>
                            </div>
                            <div class="col-md-12 ">
-                              <input class="contactus" placeholder="Name" type="type" name="Name"> 
+                              <input class="contactus" placeholder="Nome" type="text" name="Nome"> 
                            </div>
                            <div class="col-md-12">
-                              <input class="contactus" placeholder="Phone Number" type="type" name="Phone Number"> 
+                              <input class="contactus" placeholder="Telefone para contato" type="text" name="Telefone_contato"> 
                            </div>
                            <div class="col-md-12">
-                              <input class="contactus" placeholder="Email" type="type" name="Email">                          
+                              <input class="contactus" placeholder="Email" type="email" name="Email">
                            </div>
                            <div class="col-md-12">
-                              <input class="contactusmess" placeholder="Message" type="type" Message="Name">
+                              <input class="contactusmess" placeholder="Mensagem" type="text" name="mensagem">
                            </div>
                            <div class="col-md-12">
-                              <button class="send_btn">Send</button>
+                              <button class="send_btn">Enviar</button>
                            </div>
                         </div>
                      </form>
@@ -390,18 +391,18 @@
             <div class="container">
                <div class="row">
                   <div class="col-md-5">
-                     <a class="logo2" href="index.html"><img src="images/logo2.png" alt="#"/></a>
-                     <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it  </p>
+                     <a class="logo2" href="index.html"><img src="images/logo.webp" alt="#"/></a>
+                     <p>"Haja Luz Ponte Rolante oferece soluções industriais seguras e eficientes para movimentação de cargas, garantindo desempenho confiável, produtividade elevada e suporte especializado para empresas que buscam tecnologia robusta e resultados consistentes."</p>
                   </div>
                   <div class="col-md-3">
                      <div class="fid_box">
-                        <h3>Useful Link </h3>
+                        <h3>Link </h3>
                         <ul class="use_link">
-                           <li class="active"><a  href="index.html">Home</a></li>
-                           <li><a href="about.html">About</a></li>
-                           <li><a href="project.html">Our Project</a></li>
-                           <li><a href="testimonial.html">Testimonial</a></li>
-                           <li><a href="contact.html">Contact Us</a></li>
+                           <li class=""><a  href="index.html">Inicio</a></li>
+                           <li><a href="#about">Sobre</a></li>
+                           <li><a href="#project">Projetos</a></li>
+                           <li><a href="#testimonial">Depoimentos</a></li>
+                           <li><a href="#contact">Contate-nos</a></li>
                         </ul>
                      </div>
                   </div>
@@ -409,16 +410,13 @@
                      <div class="fid_box">
                         <h3>Contact  </h3>
                         <ul class="location_icon">
-                           <li><a href="Javascript:void(0)"><i class="fa fa-map-marker" aria-hidden="true"></i></a><br> It is a long established fact that a <br>reader will be distracted</li>
-                           <li><a href="Javascript:void(0)"><i class="fa fa-phone" aria-hidden="true"></i></a><br>
-                              (+71) 1234567890<br> (+71) 1234567890
-                           </li>
-                           <li><a href="Javascript:void(0)"><i class="fa fa-envelope" aria-hidden="true"></i></a><br> demo@gmail.com</li>
+                           <li><a href="https://www.instagram.com/hajaluzponterolante/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a><br>@hajaluzponterolante<br></li>
+                           <li><a href="https://api.whatsapp.com/send/?phone=5561995511759" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a><br>hajaluzponterolante<br></li>
                         </ul>
                      </div>
                   </div>
                </div>
-               <div class="row">
+               <!--<div class="row">
                   <div class="col-md-12 margin_topv">
                      <h3 class="neslatter">Subscribe Our News letter</h3>
                      <form class="news_form">
@@ -426,13 +424,13 @@
                         <button class="sumbit">Subscribe</button>
                      </form>
                   </div>
-               </div>
+               </div>-->
             </div>
             <div class="copyright">
                <div class="container">
                   <div class="row">
                      <div class="col-md-12">
-                        <p>© 2019 All Rights Reserved. Design by<a href="https://html.design/"> Free Html Templates</a></p>
+                        <p>© 2026 Desenvolvido por Haja Luz Ponte Rolante</a></p>
                      </div>
                   </div>
                </div>
@@ -448,35 +446,33 @@
       <!-- sidebar -->
       <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script src="js/custom.js"></script>
-      <script>
-         function openNav() {
-           document.getElementById("mySidepanel").style.width = "250px";
-         }
-         
-         function closeNav() {
-           document.getElementById("mySidepanel").style.width = "0";
-         }
-      </script>
-      <script>
-         // This example adds a marker to indicate the position of Bondi Beach in Sydney,
-         // Australia.
-         function initMap() {
-           var map = new google.maps.Map(document.getElementById('map'), {
-             zoom: 11,
-             center: {lat: 40.645037, lng: -73.880224},
-             });
-         
-         var image = 'images/maps-and-flags.png';
-         var beachMarker = new google.maps.Marker({
-             position: {lat: 40.645037, lng: -73.880224},
-             map: map,
-             icon: image
-           });
-         }
-      </script>
+      <!-- Menu -->
+      <script src="menu.js"></script>
       <!-- google map js -->
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap"></script>
-      <!-- end google map js --> 
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD35CbG9wan9cwdMcA_ByqvGGgRJxMXYEo&callback=initMap"></script>
+      <!-- end google map js -->
+      <script>
+         window.addEventListener("load", function () {
+
+         // Garante que o loader só some quando tudo estiver pronto
+         setTimeout(function () {
+
+         // some com o loader
+         document.querySelector(".loader_bg").style.opacity = "0";
+
+         setTimeout(function () {
+            document.querySelector(".loader_bg").style.display = "none";
+         }, 300); // tempo da transição
+
+         // mostra o header e libera a página
+         document.body.classList.remove("loading");
+
+          }, 1200); // ajuste o tempo se quiser mais ou menos loading
+         });
+      </script>
+
+   
+ 
    </body>
 </html>
 
