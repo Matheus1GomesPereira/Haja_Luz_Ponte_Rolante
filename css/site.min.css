@@ -301,6 +301,19 @@ button {
   background-color: #000000 !important;
 }
 
+/* Transição suave da logo */
+.header_section .logo img {
+  height: 60px;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Efeito ao rolar (opcional, mas deixa mais elegante) */
+.header_section.scrolled .logo img {
+  transform: scale(0.95);
+  opacity: 0.9;
+}
+
+
 /* ---------------- RIGHT BUTTON ---------------- */
 
 .right_button {
@@ -359,7 +372,7 @@ body {
 
 .text-bg h1 {
      color: #000000;
-     font-size: 65px;
+     font-size: 50px;
      line-height: 75px;
      padding-bottom: 50px;
      font-weight: bold;
@@ -1291,7 +1304,7 @@ ul.location_icon li a {
     ul.location_icon li {
         font-size: 16px;
     }
-    
+
     .news_form .letter_form {
         width: 100%;
     }
