@@ -428,13 +428,13 @@ body {
 
 #banner1 a.carousel-control-prev {
      position: absolute;
-     left: inherit;
+     left: 720px;
      right: 90px;
 }
 
 #banner1 a.carousel-control-next {
      position: absolute;
-     right: 20px;
+     right: 700px;
      bottom: 10px;
 }
 
